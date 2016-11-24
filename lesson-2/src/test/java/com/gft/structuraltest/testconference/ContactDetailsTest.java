@@ -18,8 +18,10 @@ public class ContactDetailsTest {
             "jacek,true"
     })
     public void shouldReturnTrueIfFirstNameIsValid(String firstName, boolean result)  {
+
         assertEquals(ContactDetails.validateFirstName(firstName), result);
     }
+<<<<<<< HEAD
 	/*public void shouldReturnTrueIfFirstNameIsValid()  {
         boolean expectedResult = true;
 		boolean actualResult = ContactDetails.validateFirstName("Jacek");
@@ -32,5 +34,15 @@ public class ContactDetailsTest {
 		boolean actualResult = ContactDetails.validateFirstName("jacek@wp.pl");
 		assertEquals(expectedResult,actualResult);
     }*/
+=======
+
+//    @Test
+//    public void shouldReturnTrueIfFirstNameIsValid(){
+//        boolean expectedResult =  true;
+//        boolean actualResult = ContactDetails.validateFirstName("Jacek");
+//        assertEquals(expectedResult, actualResult);
+//    }
+
+>>>>>>> 124acb95ddbac9aad49b6c00b7691482b2f45f26
 }
 
