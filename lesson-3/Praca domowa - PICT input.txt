@@ -1,0 +1,21 @@
+Client_type: Guest, Registered, Super Client
+Invoice_Cost: 30, 60, 170, 300
+Discount: 0%, 1%, 5%, 7%, 10%, 13%, 15%, 20%
+Free_Transport: Yes, No
+
+IF [Client_type] = "Guest" AND [Invoice_Cost] < 50 THEN [Discount] = "0%";
+IF [Client_type] = "Guest" AND [Invoice_Cost] >= 50 AND [Invoice_Cost] < 150 THEN [Discount] = "1%";
+IF [Client_type] = "Guest" AND [Invoice_Cost] >= 150 THEN [Discount] = "5%";
+IF [Client_type] = "Guest" AND [Invoice_Cost] < 300 THEN [Free_Transport] = "No";
+IF [Client_type] = "Guest" AND [Invoice_Cost] = 300 THEN [Free_Transport] = "Yes";
+
+IF [Client_type] = "Registered" AND [Invoice_Cost] < 150 THEN [Discount] = "5%";
+IF [Client_type] = "Registered" AND [Invoice_Cost] >= 150 AND [Invoice_Cost] < 300 THEN [Discount] = "7%";
+IF [Client_type] = "Registered" AND [Invoice_Cost] >= 300 THEN [Discount] = "13%";
+IF [Client_type] = "Registered" AND [Invoice_Cost] < 150 THEN [Free_Transport] = "No";
+IF [Client_type] = "Registered" AND [Invoice_Cost] >= 150 THEN [Free_Transport] = "Yes";
+
+IF [Client_type] = "Super Client" AND [Invoice_Cost] < 150 THEN [Discount] = "10%";
+IF [Client_type] = "Super Client" AND [Invoice_Cost] >= 150 AND [Invoice_Cost] < 300 THEN [Discount] = "15%";
+IF [Client_type] = "Super Client" AND [Invoice_Cost] >= 300 THEN [Discount] = "20%";
+IF [Client_type] = "Super Client" THEN [Free_Transport] = "Yes";
